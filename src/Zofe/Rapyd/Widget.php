@@ -75,10 +75,6 @@ class Widget
     {
         $match_url = trim(parse_url($url, PHP_URL_PATH),'/');
 
-        if (Request::path()!= $match_url) {
-            $url = Persistence::get($match_url);
-        }
-
         $attributes = array_merge(array("class"=>"btn btn-default"), $attributes);
         $this->button_container[$position][] =  HTML::link($url, $name, $attributes);
         $this->links[] = $url;
